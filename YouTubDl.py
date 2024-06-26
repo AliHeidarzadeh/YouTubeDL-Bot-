@@ -58,8 +58,8 @@ Select_Type_learn_Markup = telebot.types.InlineKeyboardMarkup()
 Select_Type_learn_Markup.add(Select_Type_learn1,Select_Type_learn2)
 
 
-Token = "YOUR BOT TOKEN"
-
+Token = "YOUR BOT TOKEN" #توکن ربات بزن
+OneApiToken = "OneApiToken"  #برو تو سایت one-api.ir
 Bot = telebot.TeleBot(Token)
 
 @Bot.message_handler(commands=['start'])
@@ -113,10 +113,10 @@ def callback(call):
      
      elif call.data == "1080":
           Bot.send_message(call.message.chat.id,Ads,reply_markup=Download_Video_Ads_Markup)
-          Url = f"https://one-api.ir/youtube/?token=934149:665c779b26c05&action=getvideoid&link={link}"
+          Url = f"https://one-api.ir/youtube/?token={OneApiToken}&action=getvideoid&link={link}"
           respons = requests.get(Url)
           Video_Id = respons.json()['result']
-          Url = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=fullvideo&id={Video_Id}"
+          Url = f"https://youtube.one-api.ir/?token={OneApiToken}&action=fullvideo&id={Video_Id}"
           respons = requests.get(Url)
           Data =respons.json()['result']['formats']
           Video = []
@@ -135,10 +135,10 @@ def callback(call):
                if Sound1['format_note'] == "medium" :
                     if Sound1['audio_ext'] == "m4a":
                          Sound.append(Sound1['id'])
-          Url_Video = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=download&id={Video[0]}"
+          Url_Video = f"https://youtube.one-api.ir/?token={OneApiToken}&action=download&id={Video[0]}"
           respons_Video = requests.get(Url_Video)
           Video_Url = respons_Video.json()['result']['link']
-          Url_Sound = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=download&id={Sound[0]}"
+          Url_Sound = f"https://youtube.one-api.ir/?token={OneApiToken}&action=download&id={Sound[0]}"
           respons_Sound = requests.get(Url_Sound)
           Sound_Url = respons_Sound.json()['result']['link']
           respons_Tumbnail = requests.get(Tumbnail , allow_redirects=True)
@@ -146,10 +146,10 @@ def callback(call):
           Bot.send_photo(call.message.chat.id , open(f'{Video_Id}'+'.webp' , "rb") , f"Title: {title}\nChannel_Url: {Channel_Url}\n\n\nلینک دانلود فیلم📹: {Video_Url}\nلینک دانلود صدا🎧: {Sound_Url}\n\n\n{Ads}")
      elif call.data == "720":
           Bot.send_message(call.message.chat.id,Ads,reply_markup=Download_Video_Ads_Markup)
-          Url = f"https://one-api.ir/youtube/?token=934149:665c779b26c05&action=getvideoid&link={link}"
+          Url = f"https://one-api.ir/youtube/?token={OneApiToken}&action=getvideoid&link={link}"
           respons = requests.get(Url)
           Video_Id = respons.json()['result']
-          Url = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=fullvideo&id={Video_Id}"
+          Url = f"https://youtube.one-api.ir/?token={OneApiToken}&action=fullvideo&id={Video_Id}"
           respons = requests.get(Url)
           Data =respons.json()['result']['formats']
           Video = []
@@ -168,10 +168,10 @@ def callback(call):
                if Sound1['format_note'] == "medium" :
                     if Sound1['audio_ext'] == "m4a":
                          Sound.append(Sound1['id'])
-          Url_Video = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=download&id={Video[0]}"
+          Url_Video = f"https://youtube.one-api.ir/?token={OneApiToken}&action=download&id={Video[0]}"
           respons_Video = requests.get(Url_Video)
           Video_Url = respons_Video.json()['result']['link']
-          Url_Sound = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=download&id={Sound[0]}"
+          Url_Sound = f"https://youtube.one-api.ir/?token={OneApiToken}&action=download&id={Sound[0]}"
           respons_Sound = requests.get(Url_Sound)
           Sound_Url = respons_Sound.json()['result']['link']
           respons_Tumbnail = requests.get(Tumbnail , allow_redirects=True)
@@ -179,10 +179,10 @@ def callback(call):
           Bot.send_photo(call.message.chat.id , open(f'{Video_Id}'+'.webp' , "rb") , f"Title: {title}\nChannel_Url: {Channel_Url}\n\n\nلینک دانلود فیلم📹: {Video_Url}\nلینک دانلود صدا🎧: {Sound_Url}\n\n\n{Ads}")
      elif call.data == "480":
           Bot.send_message(call.message.chat.id,Ads,reply_markup=Download_Video_Ads_Markup)
-          Url = f"https://one-api.ir/youtube/?token=934149:665c779b26c05&action=getvideoid&link={link}"
+          Url = f"https://one-api.ir/youtube/?token={OneApiToken}&action=getvideoid&link={link}"
           respons = requests.get(Url)
           Video_Id = respons.json()['result']
-          Url = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=fullvideo&id={Video_Id}"
+          Url = f"https://youtube.one-api.ir/?token={OneApiToken}&action=fullvideo&id={Video_Id}"
           respons = requests.get(Url)
           Data =respons.json()['result']['formats']
           Video = []
@@ -201,10 +201,10 @@ def callback(call):
                if Sound1['format_note'] == "medium" :
                     if Sound1['audio_ext'] == "m4a":
                          Sound.append(Sound1['id'])
-          Url_Video = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=download&id={Video[0]}"
+          Url_Video = f"https://youtube.one-api.ir/?token={OneApiToken}&action=download&id={Video[0]}"
           respons_Video = requests.get(Url_Video)
           Video_Url = respons_Video.json()['result']['link']
-          Url_Sound = f"https://youtube.one-api.ir/?token=934149:665c779b26c05&action=download&id={Sound[0]}"
+          Url_Sound = f"https://youtube.one-api.ir/?token={OneApiToken}&action=download&id={Sound[0]}"
           respons_Sound = requests.get(Url_Sound)
           Sound_Url = respons_Sound.json()['result']['link']
           respons_Tumbnail = requests.get(Tumbnail , allow_redirects=True)
